@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .title {
+      font-size: 50px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id = 'app'>
+    <!-- 50px必须加引号，否则是当成一个变量解析 -->
+    <h1 :style="{fontSize:'50px'}">{{ message }}<h1>
+    <h1 :style="{fontSize: finalSize}">{{ message }}<h1>
+    <h1 :style="{fontSize: finalsize + 'px',color: 'red'}">{{ message }}<h1>
+  </div>
+  <script src= 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+  <script>
+    const vue = new Vue({
+      el: '#app', 
+      data: {
+        message: '你好',
+        finalSize: '100px',
+        finalsize: 100
+      }
+    })
+  </script>
+</body>
+</html>

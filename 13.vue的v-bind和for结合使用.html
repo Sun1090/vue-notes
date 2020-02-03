@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.active{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id= 'app'> 
+		<h1 v-for="(item, index) in movie" :class="count==index ? 'active' :''" @click='change(index)'>{{item}}</h1>
+	</div>
+	<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+	<script>
+		const vue=new Vue({
+			el: '#app',  //用于挂载要管理的元素
+			data:{ //定义数据
+			    count: -1,
+                message:'你好', 
+				movie:['海王','海尔兄弟','火影忍者','海贼王']		
+			},
+			methods: {
+				change:function(index){
+					this.count=index;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

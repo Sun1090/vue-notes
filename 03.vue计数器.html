@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <h2>当前计数:{{counter}}</h2>
+        <!-- <button v-on:click="counter++">+</button>
+        <button v-on:click="counter--">-</button> -->
+        <button @click="increment">+</button>
+        <button @click="decrement">-</button>
+    </div>
+    <script>
+        let vue=new Vue({
+            el: '#app',
+            data:{
+                counter:0
+            },
+            methods: {
+                increment:function(){
+                    this.counter++
+                },
+                decrement:function(){
+                    this.counter--
+                }
+            }
+        })
+    </script>
+</body>
+</html>

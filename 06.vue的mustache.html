@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+      <h2>{{message}}</h2>
+      <h2>{{message}},空白</h2>
+      <!-- mustache 不仅可以直接写变量，还可以写简单的表达式 -->
+      <h2>{{firstName+lastName}}</h2>
+      <h2>{{firstName+' '+lastName}}</h2>
+      <h2>{{firstName}} {{lastName}}</h2>
+      <h2>{{counter * 2}}</h2>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const vue = new Vue({
+      el: '#app',
+      data: {
+        message: '你好',
+        firstName: 'sun',
+        lastName: 'sunny',
+        counter: 100
+      }
+    })
+  </script>
+</body>
+</html>
